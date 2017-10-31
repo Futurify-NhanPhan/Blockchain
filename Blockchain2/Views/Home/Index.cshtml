@@ -3,6 +3,14 @@
     ViewBag.Title = "Index";
 }
 <div ng-controller="blockchainCtrl">
-    <h2>Index</h2>
-    {{1+1}}
+    <label>Role</label>
+    <select class="form-control" name="BrandId" ng-model="role">
+        <option ng-repeat="r in roles" ng-value="r.Id">{{r.Name}}</option>
+    </select>
+    <a ng-click="checkInfo()" class="btn">Check</a>
+    
+    <p>Information: </p>
+    <p>Transaction Id: {{transaction.TransactionId}}</p>
+    <p>Data: {{transaction.Data|json}}</p>
+
 </div>
